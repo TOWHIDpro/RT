@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+    <meta name="author" content="themefisher.com">
+  
+    <title>MT Rajpath Bangladesh LTD</title>
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'base/images/favicon.png' %}" />
+  
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="{% static 'base/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" href="{% static 'base/plugins/icofont/icofont.min.css' %}">
+    <!-- Slick Slider  CSS -->
+    <link rel="stylesheet" href="{% static 'base/plugins/slick-carousel/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'base/plugins/slick-carousel/slick/slick-theme.css' %}">
+  
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    {% block css %}
+    {% endblock css %}
+  
+</head>
+
+<body id="top" v-cloak>
+    {% include 'base/header.html' %}
+    {% block content %}{% endblock content %}
+    {% include 'base/footer.html' %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <!-- Vue js -->
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.prod.js"></script>
+
+    <!-- Main jQuery -->
+    <script src="{% static 'base/plugins/jquery/jquery.js' %}"></script>
+    <!-- Bootstrap 4.3.2 -->
+    <script src="{% static 'base/plugins/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'base/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'base/plugins/counterup/jquery.easing.js' %}"></script>
+    <!-- Slick Slider -->
+    <script src="{% static 'base/plugins/slick-carousel/slick/slick.min.js' %}"></script>
+    <!-- Counterup -->
+    <script src="{% static 'base/plugins/counterup/jquery.waypoints.min.js' %}"></script>
+    
+    <script src="{% static 'base/plugins/shuffle/shuffle.min.js' %}"></script>
+    <script src="{% static 'base/plugins/counterup/jquery.counterup.min.js' %}"></script>
+    <!-- Google Map -->
+    <script src="{% static 'base/plugins/google-map/map.js' %}"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
+
+    
+    <script src="{% static 'base/js/script.js' %}"></script>
+    <script src="{% static 'base/js/contact.js' %}"></script>
+    {% block scripts %}{% endblock scripts %}
+
+    
+
+    
+
+</body>
+    
+</html>

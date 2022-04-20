@@ -1,0 +1,399 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'index/css/messagebox.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- Slider Start -->
+<div>
+<section class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-xl-7">
+				<div class="block">
+					<div class="divider mb-3"></div>
+					<h1 class="mb-3 mt-3">MT Rajpath Bangladesh Ltd</h1>
+					<span class="text-uppercase text-sm letter-spacing ">Our Slogan is:</span>
+					<b style="font-size:14px; color:#e70e20; font-weight:bold"><span class="text-uppercase text-sm letter-spacing ">"Rajpathe Jonotar Sathe"</span></b>
+					<span class="text-uppercase text-sm letter-spacing "></span>
+					<p class="mb-4 pr-5">And our aim is to bring a positive change in Bangladesh and make a huge job platform for job seekers.</p>
+					<div class="btn-container ">
+						<button href="#appoinment-form" @click.prevent="Go_to_appoinment('appoinment')" class="btn btn-main-2 btn-icon btn-round-full">Make an appoinment <i class="icofont-simple-right ml-2"></i></button>
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="feature-block d-lg-flex">
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-surgeon-alt"></i>
+						</div>
+						<span>24 Hours Service</span>
+						<h4 class="mb-3">Online Appoinment</h4>
+						<p class="mb-4">Get All time support for emergency. we will be there every time for you.</p>
+						<a href="#appoinment-form" @click.prevent="Go_to_appoinment('appoinment')" class="btn btn-main btn-round-full">Make an appoinment</a>
+					</div>
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-ui-clock"></i>
+						</div>
+						<span>Timing schedule</span>
+						<h4 class="mb-3">Working Hours</h4>
+						<ul class="w-hours list-unstyled">
+		                    <li class="d-flex justify-content-between">Sat - Thu : <span>9:00am - 7:00pm</span></li>
+		                </ul>
+					</div>
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-support"></i>
+						</div>
+						<span>Contact us</span>
+						<h4 class="mb-3">+8809612113322</h4>
+						<p>Please contact directly with us to know any info about us. here is our contact number
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="section about">
+	<div class="container">
+		<div class="row align-items-center">
+			{% for images in gallery_img %}
+			<div class="col-lg-4 col-sm-6 mt-3">
+				<div class="about-img">
+					<img src="{{images.img.url}}" alt="" class="img-fluid">
+					<!-- <img src="{% static 'base/images/about/office_2.jpg' %}" alt="" class="img-fluid mt-4"> -->
+				</div>
+			</div>
+			{% endfor %}
+			
+			<div class="col-lg-4">
+				<div class="about-content pl-4 mt-4 mt-lg-0">
+					<h2 class="title-color">Our Services</h2>
+					<p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
+
+					<a href="{% url 'services' %}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- <section class="cta-section ">
+	<div class="container">
+		<div class="cta position-relative">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-doctor"></i>
+						<span class="h3">58</span>k
+						<p>Happy People</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-flag"></i>
+						<span class="h3">700</span>+
+						<p>Surgery Comepleted</p>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-badge"></i>
+						<span class="h3">40</span>+
+						<p>Expert Doctors</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-globe"></i>
+						<span class="h3">20</span>
+						<p>Worldwide Branch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->
+<section class="section service gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7 text-center">
+				<div class="section-title">
+					<h2>What we focused at</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>Since its beginning in 26/7/2021. MT Rajpath Bangladesh Ltd has grown to be one of the leading multi business company in Bangladesh. MT Rajpath Bangladesh (Ltd) aims to bring a positive change in Bangladesh and make huge job platform for the all job seekers.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			{% for f in focus %}
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="{{f.icon}} text-lg"></i>
+						<h4 class="mt-3 mb-3">{{f.title}}</h4>
+					</div>
+
+					<div class="content">
+						<p class="mb-4">{{f.description}}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+
+		</div>
+	</div>
+	</section>
+
+	
+<section class="section appoinment" ref="appoinment">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6 ">
+				<div class="appoinment-content">
+					<img src="{% static 'base/images/about/img-3.jpg' %}" alt="" class="img-fluid">
+					<div class="emergency">
+						<h2 class="text-md">
+							<i class="icofont-phone-circle text-lg"></i>+8801760058679 
+							<hr> 
+							<i class="icofont-business-man text-lg"></i> MD Masud Khan</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-10 ">
+				<div class="appoinment-wrap mt-5 mt-lg-0">
+					<h2 class="mb-2 title-color">Book appoinment</h2>
+					<p class="mb-4">You can easily message us here and we will reply you back through your number or Email</p>
+
+					<!-- Appointment Form START-->
+					<form ref="msgform" id="appoinment-form" class="appoinment-form" method="post">
+						<div class="form-group-2 mb-4">
+							<div class="form-group">
+								<input v-model="messageform.name" name="name" id="name" type="text" class="form-control" placeholder="Full Name">
+							</div>
+						</div>
+						<div class="form-group-2 mb-4">
+							<div class="form-group">
+								<input v-model="messageform.email" name="email" id="email" type="email" class="form-control" placeholder="Email">
+							</div>
+						</div>
+						<div class="form-group-2 mb-4">
+							<div class="form-group">
+								<input v-model="messageform.phone" name="phone" id="phone" type="Number" class="form-control" placeholder="Phone Number">
+							</div>
+						</div>
+						<div class="form-group-2 mb-4">
+							<textarea v-model="messageform.message" name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
+						</div>
+						<button @click.prevent="msgboxShow()" class="btn btn-main btn-round-full">Send<i class="icofont-simple-right ml-2"></i></button>
+                	</form>
+					<div v-if="messagebox.visible" class="overlays">
+						<div class="popups">
+							<h2>[[messagebox.message.first]]</h2>
+							<a class="close" @click="msgboxShow()">&times;</a>
+							<div class="content" style="font-size: 120%">
+								[[messagebox.message.second]]
+							</div>
+						</div>
+					</div>
+					<!-- Appointment Form END-->
+            	</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% comment %} <section class="section testimonial-2 gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>We served over 5000+ Patients</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-12 testimonial-wrap-2">
+				<div class="testimonial-block style-2  gray-bg">
+					<i class="icofont-quote-right"></i>
+
+					<div class="testimonial-thumb">
+						<img src="{% static 'base/images/team/test-thumb1.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info ">
+						<h4>Amazing service!</h4>
+						<span>John Partho</span>
+						<p>
+							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
+						</p>
+					</div>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'base/images/team/test-thumb2.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Expert doctors!</h4>
+						<span>Mullar Sarth</span>
+						<p>
+							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
+						</p>
+					</div>
+					
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'base/images/team/test-thumb3.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Good Support!</h4>
+						<span>Kolis Mullar</span>
+						<p>
+							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
+						</p>
+					</div>
+					
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'base/images/team/test-thumb4.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Nice Environment!</h4>
+						<span>Partho Sarothi</span>
+						<p class="mt-4">
+							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
+						</p>
+					</div>
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'base/images/team/test-thumb1.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Modern Service!</h4>
+						<span>Kolis Mullar</span>
+						<p>
+							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
+						</p>
+					</div>
+					<i class="icofont-quote-right"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> {% endcomment %}
+<!-- <section class="section clients">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>Partners who support us</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row clients-logo">
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/1.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/2.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/3.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/4.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/5.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/6.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/3.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/4.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/5.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'base/images/about/6.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->
+<!-- footer Start -->
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script  src="{% static 'index/js/index.js' %}"></script>
+<script>index.mount('#top')</script>
+{% endblock scripts %}
+
+
+   

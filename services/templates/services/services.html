@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'services/css/services-cart.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div id=top>
+<section class="page-title bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">Our services</span>
+          <h1 class="text-capitalize mb-5 text-lg">What We Do</h1>
+
+          <!-- <ul class="list-inline breadcumb-nav">
+            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><span class="text-white">/</span></li>
+            <li class="list-inline-item"><a href="#" class="text-white-50">Our services</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section service-2">
+	<div class="container">
+		<div class="row">
+			<services-cart />
+		</div>
+	</div>
+</section>
+
+<section class="section cta-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7">
+				<div class="cta-content">
+					<div class="divider mb-4"></div>
+					<h2 class="mb-5 text-lg">The purpose of MT Rajpath Bangladesh Ltd is to <span class="title-color">bring progressive revolution in Bangladesh.</span></h2>
+					<a href="{% url 'index' %}" class="btn btn-main-2 btn-round-full">Get appoinment<i class="icofont-simple-right  ml-2"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script  src="{% static 'services/js/services.js' %}"></script>
+<script  src="{% static 'services/js/services-details-popup.js' %}"></script>
+<script  src="{% static 'services/js/services-cart.js' %}"></script>
+
+<script>services.mount('#top')</script>
+{% endblock scripts %}
