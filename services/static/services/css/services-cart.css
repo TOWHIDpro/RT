@@ -16,7 +16,7 @@
 }
 
 .cart-image {
-  width: 350px;
+  width: 90%;
 }
 
 .modal-state:checked + .modal-details .modal__inner {
@@ -29,7 +29,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  width: 50%;
+  width: 40%;
   margin: auto;
   overflow: auto;
   background: #fff;
@@ -37,6 +37,15 @@
   padding: 1em 2em;
   height: 50%;
   text-align: center;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .modal__inner {
+      width: 90%;
+    }
 }
 
 /* Related to Closebtn */
@@ -69,13 +78,5 @@
   transform: rotate(-45deg);
 }
 
-/* @media screen and (max-width: 768px) {
-    
-  .modal__inner {
-    width: 90%;
-    height: 90%;
-    box-sizing: border-box;
-  }
-} */
 
 

@@ -52,7 +52,7 @@ let index = Vue.createApp({
         this.resetform(this.messageform)
         return {
           first: `Message Submited`,
-          second: `We will review your message and reply you back`
+          second: `Thank you for getting in touch! We will review your message and reply you back soon.`
         }
       }
       // END

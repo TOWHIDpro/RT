@@ -21,6 +21,11 @@ body {
   font-weight: 400;
 }
 
+
+.container{
+  max-width: 900px;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "Exo", sans-serif;
   font-weight: 700;
@@ -560,22 +565,43 @@ a:focus {
   width: 85%;
 }
 
+
 .appoinment-content .emergency {
   position: absolute;
   content: "";
   right: 10px;
-  bottom: 20px;
+  bottom: 10px;
   background: #223a66;
-  padding: 15px;
+  padding: 8px;
 }
+
 
 .appoinment-content .emergency h2 {
   color: #fff;
 }
 
+@media (min-width: 991px){
+  .text-md {
+    font-size: 20px;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    .text-md {
+      font-size: 15px;
+      padding: -6px;
+      margin: -5px;
+      height: 100px;
+    }
+
+}
+
 .appoinment-content .emergency i {
   margin-right: 10px;
   color: rgba(255, 255, 255, 0.7);
+  font-size: 30px;
 }
 
 .appoinment-form {

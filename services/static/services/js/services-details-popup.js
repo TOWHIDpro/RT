@@ -18,9 +18,6 @@ services.component('services-details', {
       popupdata: Object,
       hide: Function,
     },
-    mounted() {
-      console.log('ook')
-    },
     
       
 })
