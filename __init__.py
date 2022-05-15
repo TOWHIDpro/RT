@@ -1,0 +1,1 @@
+from mtrajpathbdltd.wsgi import application
