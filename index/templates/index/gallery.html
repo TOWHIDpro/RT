@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'index/css/gallery.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+    <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h1 class="gallery-title">Our office decorum</h1>
+    </div>
+
+        {% for img in gallery %}
+        <div class="gallery_product p-1">
+            <img src="{{ img.img.url}}" class="img-responsive" style="width: 350px;">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+$(document).ready(function(){
+
+$(".filter-button").click(function(){
+    var value = $(this).attr('data-filter');
+    
+    if(value == "all")
+    {
+        
+        $('.filter').show('1000');
+    }
+    else
+    {
+      
+        $(".filter").not('.'+value).hide('3000');
+        $('.filter').filter('.'+value).show('3000');
+        
+    }
+});
+
+if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+</script>
+{% endblock scripts %}
+
+
+   

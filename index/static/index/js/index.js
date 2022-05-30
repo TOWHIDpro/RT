@@ -2,6 +2,7 @@ let index = Vue.createApp({
   delimiters: ['[[', ']]'],
     data() {
       return {
+        // csrf: document.getElementsByName('csrfmiddlewaretoken').value,
         messageform:{
           name: "",
           email: "",
@@ -23,10 +24,13 @@ let index = Vue.createApp({
       sendmsg(){
         axios.post('http://127.0.0.1:8000/api/index/', this.messageform)
         .then((res) => {
+          console.log(this.messageform)
         })
         .catch(function (error) {
         console.log(error);
+        console.log(this.messageform)
         });
+  
       },
       msgboxShow(){
         this.messagebox.visible =! this.messagebox.visible
@@ -49,7 +53,7 @@ let index = Vue.createApp({
           }
         }
         this.sendmsg()
-        this.resetform(this.messageform)
+        // this.resetform(this.messageform)
         return {
           first: `Message Submited`,
           second: `Thank you for getting in touch! We will review your message and reply you back soon.`

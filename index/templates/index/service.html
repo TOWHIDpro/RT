@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'index/css/service.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- Slider Start -->
+<div class="">
+    <div class="row serviceitem p-2">
+      <div id="tm-section-1" class="tm-section">
+        <div class="col-md-12">
+            <h1 class="text-xs-center blue-text tm-page-2-title">{{service.title|upper}}</h1>
+            <img src="{{service.img.url}}" class="img-fluid tm-banner-img" alt="Image">
+            <p class="text-left tm-description">{{service.desc|safe}}</p>
+        </div>
+      </div>                
+    </div>
+    
+    <div class="row serviceitem">
+        <div class="tm-section m-3" id="tm-section-2">
+            <div class="col-md-12">
+                <div class="tm-flex-center"> 
+                    <button class="btn btn-danger back-btn">BACK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    document.querySelector('.back-btn').addEventListener('click', goBack)
+    function goBack() {
+        window.history.back();
+    }
+</script>
+{% endblock scripts %}
+
+
+   

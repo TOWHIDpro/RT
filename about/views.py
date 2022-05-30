@@ -8,5 +8,5 @@ class AboutView(View):
     def get(self, request):
         employees = Employees.objects.all()
         return render(request, 'about/about.html', {
-           'employees': employees 
+        #    'employees': employees 
         })
